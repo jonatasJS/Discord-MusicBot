@@ -20,18 +20,20 @@ module.exports = async (client) => {
     });
 
     setInterval(async () => {
-        await data.commands.forEach((cmd) => {
-            const index = rondom(0, data.commands.length);
-            return name = `${cmd[index].name} (${cmd[index].aliases[1]})`;
-        });
+        if(data.commands){
+            await data.commands.forEach((cmd) => {
+                const index = rondom(0, data.commands.length);
+                return name = `${cmd[index].name} (${cmd[index].aliases[1]})`;
+            });
 
-        client.user.setPresence({
-            status: "online", // You can show online, idle, and dnd
-            activity: {
-                name, // The message shown
-                type: "WATCHING", // PLAYING, WATCHING, LISTENING, STREAMING,
-            }
-        });
+            client.user.setPresence({
+                status: "online", // You can show online, idle, and dnd
+                activity: {
+                    name, // The message shown
+                    type: "WATCHING", // PLAYING, WATCHING, LISTENING, STREAMING,
+                }
+            });
+        } else return;
     }, 10000);
 
     client.Manager.init(client.user.id);
