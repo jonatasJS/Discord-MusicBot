@@ -1,3 +1,5 @@
+import fetch from 'cross-fetch';
+
 module.exports = async (client) => {
     let name = "";
     const myInit = {
