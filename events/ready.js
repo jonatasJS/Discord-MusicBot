@@ -22,7 +22,7 @@ module.exports = async (client) => {
     setInterval(async () => {
         await data.commands.forEach((cmd) => {
             const index = rondom(0, data.commands.length);
-            return name = `${cmd[index].name} (${await cmd[index].aliases[1]})`;
+            return name = `${cmd[index].name} (${cmd[index].aliases[1]})`;
         });
 
         client.user.setPresence({
