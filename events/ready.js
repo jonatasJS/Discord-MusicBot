@@ -1,9 +1,7 @@
 module.exports = async (client) => {
     let name = "";
-    const myHeaders = new Headers();
     const myInit = {
         method: 'GET',
-        headers: myHeaders,
         mode: 'cors',
         cache: 'default'
     };
