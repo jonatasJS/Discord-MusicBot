@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch';
+import fetch from 'node-fetch';
 
 module.exports = async (client) => {
     let name = "";
