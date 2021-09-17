@@ -7,7 +7,7 @@ module.exports = async (client) => {
         mode: 'cors',
         cache: 'default'
     };
-    const data = fetch(`/api/commands`, myInit).then(res => res.json());
+    const data = fetch(`${process.env.Website}/api/commands`, myInit).then(res => res.json());
     const rondom = (min, max) => Math.floor(Math.random() * (min - max) + min);
 
     client.Ready = true;
