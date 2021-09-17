@@ -23,6 +23,7 @@ module.exports = async (client) => {
         if(data.commands){
             await data.commands.forEach((cmd) => {
                 const index = rondom(0, data.commands.length);
+                console.log(`${cmd[index].name} (${cmd[index].aliases[1]})`);
                 return name = `${cmd[index].name} (${cmd[index].aliases[1]})`;
             });
 
