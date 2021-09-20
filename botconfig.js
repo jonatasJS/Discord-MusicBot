@@ -4,16 +4,16 @@ module.exports = {
   DefaultPrefix: process.env.Prefix || ">", //Default prefix, Server Admins can change the prefix
   Port: 3000, //Which port website gonna be hosted
   SupportServer: "https://discord.gg/D9SkzTZxrM", //Support Server Link
-  Token: process.env.Token || "ODE5MzExNjExODY0Njc4NDAx.YEkxZg.EsPgIFsUz2NB_1qeQw3O7nPnFms", //Discord Bot Token
-  ClientID: process.env.Discord_ClientID || "819311611864678401", //Discord Client ID
-  ClientSecret: process.env.Discord_ClientSecret || "97y22HvqMIHpzOZfpVMsbDsYile3xTDG", //Discord Client Secret
+  Token: process.env.Token || "", //Discord Bot Token
+  ClientID: process.env.Discord_ClientID || "", //Discord Client ID
+  ClientSecret: process.env.Discord_ClientSecret || "", //Discord Client Secret
   Scopes: ["identify", "guilds", "applications.commands"], //Discord OAuth2 Scopes
   CallbackURL: "/api/callback", //Discord OAuth2 Callback URL
   "24/7": false, //If you want the bot to be stay in the vc 24/7
   CookieSecret: "Pikachu is cute", //A Secret like a password
   IconURL:
     "https://raw.githubusercontent.com/jonatasJS/Discord-MusicBot/master/assets/logo.gif", //URL of all embed author icons | Dont edit unless you dont need that Music CD Spining
-  Permissions: 2205280576, //Bot Inviting Permissions
+  Permissions: 8, //Bot Inviting Permissions
   Website: process.env.Website || "http://localhost:3000", //Website where it was hosted at includes http or https || Use "0.0.0.0" if you using Heroku
 
   //Lavalink
