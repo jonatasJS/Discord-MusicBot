@@ -21,7 +21,7 @@
 
 A Tutorial has been uploaded on YouTube, Watch it by clicking [here](https://www.youtube.com/watch?v=p4lP96Tiv9s)
 
-## 📝 [Support Server](https://discord.gg/sbySMS7m3v)
+## 📝 [Support Server](https://discord.gg/D9SkzTZxrM)
 
 ### **DO NOT JOIN OUR DISCORD FOR DASHBOARD ISSUES AND LAVALINK ISSUES. WE WILL NOT HELP YOU.**
 
@@ -38,13 +38,5 @@ If you have major coding issues with this bot, please join and ask for help.
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/jonatasJS/Discord-MusicBot)
 [![Run on Repl.it](https://repl.it/badge/github/jonatasJS/Discord-MusicBot)](https://repl.it/github/jonatasJS/Discord-MusicBot)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jonatasJS/Discord-MusicBot)
-
-## ✨ Contributors
-
-Contributions are always welcomed :D Make sure to follow [Contributing.md](/CONTRIBUTING.md)
-
-<a href="https://github.com/jonatasJS/Discord-MusicBot/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=jonatasJS/Discord-MusicBot" />
-</a>
 
 Made with :heart: and JavaScript!
