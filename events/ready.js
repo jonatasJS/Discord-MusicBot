@@ -6,8 +6,8 @@ const lg = new Logger(path.join(__dirname, "..", "Logs.log"));
 
 module.exports = async (client) => {
     let name = false;
-    const data = fetch(`http://localhost:3000/api/commands`).then(res => res.json());
-    const rondom = (min, max) => Math.floor(Math.random() * (min - max) + min);
+    /*const data = fetch(`http://localhost:3000/api/commands`).then(res => res.json());
+    const rondom = (min, max) => Math.floor(Math.random() * (min - max) + min); */
 
     client.Ready = true;
     client.user.setPresence({
