@@ -24,10 +24,19 @@ module.exports = {
     pass: "youshallnotpass",
   },
 
+  //Alternate Lavalink
+  /*
+  Lavalink: {
+    id: "Main",
+    host: "lava.Jonatas S. Soares.tech",
+    port: 1234,
+    pass: "CodingWithJonatas S. Soares", 
+  },
+  */
 
   //Please go to https://developer.spotify.com/dashboard/
   Spotify: {
-    ClientID: process.env.Spotify_ClientID || "", //Spotify Client ID
-    ClientSecret: process.env.Spotify_ClientSecret || "", //Spotify Client Secret
+    ClientID: process.env.Spotify_ClientID || "3515fdb351ba465a983926543f0b46db", //Spotify Client ID
+    ClientSecret: process.env.Spotify_ClientSecret || "d4354e4c4c744b9cba5d4caf930dd717", //Spotify Client Secret
   },
 };

@@ -6,14 +6,15 @@
   "scripts": {
     "install-node-v14": "wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash && export NVM_DIR=\"$([ -z \"${XDG_CONFIG_HOME-}\" ] && printf %s \"${HOME}/.nvm\" || printf %s \"${XDG_CONFIG_HOME}/nvm\")\" && [ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" && nvm install 14 && nvm use 14",
     "start": "node index",
+    "dev": "nodemon index",
     "rm-logs": "rm Logs.log"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SudhanPlayz/Discord-MusicBot.git"
+    "url": "git+https://github.com/jonatasJS/Discord-MusicBot.git"
   },
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "keywords": [
     "discord",
@@ -22,12 +23,12 @@
     "music",
     "discord-music"
   ],
-  "author": "SudhanPlayz",
+  "author": "jonatasJS",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/SudhanPlayz/Discord-MusicBot/issues"
+    "url": "https://github.com/jonatasJS/Discord-MusicBot/issues"
   },
-  "homepage": "https://github.com/SudhanPlayz/Discord-MusicBot#readme",
+  "homepage": "https://github.com/jonatasJS/Discord-MusicBot#readme",
   "dependencies": {
     "colors": "^1.4.0",
     "cpu-stat": "^2.0.1",
@@ -51,6 +52,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "nodemon": "^2.0.12",
     "prettier": "2.4.0"
   }
 }

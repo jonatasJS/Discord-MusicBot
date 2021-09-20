@@ -5,7 +5,9 @@ const levels = {
     low: 0.2,
     medium: 0.3,
     high: 0.35,
+    extreme: 0.55,
 };
+
 module.exports = {
     name: "bassboost",
     description: "Enables bass boosting audio effect",
@@ -34,7 +36,7 @@ module.exports = {
         let level = "none";
         if (args.length && args[0].toLowerCase() in levels) level = args[0].toLowerCase();
 
-        player.setEQ(...new Array(3).fill(null).map((_, i) => ({ band: i, gain: levels[level] })));
+        player.setEQ(...new Array(4).fill(null).map((_, i) => ({ band: i, gain: levels[level] })));
 
         return client.sendTime(message.channel, `✅ | **Bassboost level set to** \`${level}\``);
     },
