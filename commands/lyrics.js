@@ -27,7 +27,7 @@ module.exports = {
     if (!args[0]) SongTitle = player.queue.current.title;
 
     let lyrics = await lyricsFinder(SongTitle);
-    if (!lyrics) return client.sendTime(message.channel, `**No lyrics found for -** \`${SongTitle}\``);
+    if (!lyrics) return client.sendTime(message.channel, `**Nenhuma letra encontrada para -** \`${SongTitle}\``);
     lyrics = lyrics.split("\n"); //spliting into lines
     let SplitedLyrics = _.chunk(lyrics, 40); //45 lines each page
 
@@ -73,7 +73,7 @@ module.exports = {
       let lyrics = await lyricsFinder(SongTitle);
       console.log(lyrics.length === 0)
       if (lyrics.length === 0)
-        return client.sendTime(interaction, `**No lyrics found for -** \`${SongTitle}\``);
+        return client.sendTime(interaction, `**Nenhuma letra encontrada para-** \`${SongTitle}\``);
       lyrics = lyrics.split("\n"); //spliting into lines
       let SplitedLyrics = _.chunk(lyrics, 40); //45 lines each page
 
