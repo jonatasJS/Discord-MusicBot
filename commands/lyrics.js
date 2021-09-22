@@ -5,10 +5,10 @@ const _ = require("lodash");
 
 module.exports = {
   name: "lyrics",
-  description: "Shows the lyrics of the song searched",
-  usage: "[Song Name]",
+  description: "Mostra a letra da música pesquisada",
+  usage: "[Nome da música]",
   permissions: {
-    channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
+    channel: ["Ver Mensagem", "Enviar Mensagem", "Embed Links"],
     member: [],
   },
   aliases: ["ly"],
@@ -23,7 +23,7 @@ module.exports = {
     let player = await client.Manager.get(message.guild.id);
     let SongTitle = args.join(" ");
     let SearchString = args.join(" ");
-    if (!args[0] && !player) return client.sendTime(message.channel, "❌ | **Nothing is playing right now...**");
+    if (!args[0] && !player) return client.sendTime(message.channel, "❌ | **Nada está tocando agora...**");
     if (!args[0]) SongTitle = player.queue.current.title;
 
     let lyrics = await lyricsFinder(SongTitle);
@@ -52,7 +52,7 @@ module.exports = {
         name: "song",
         value: "song",
         type: 3,
-        description: "Enter a song name to search",
+        description: "Digite o nome de uma música para pesquisar",
         required: false,
       },
     ],
@@ -67,7 +67,7 @@ module.exports = {
     run: async (client, interaction, args, { GuildDB }) => {
       let player = await client.Manager.get(interaction.guild_id);
 
-      if (!interaction.data.options && !player) return client.sendTime(interaction, "❌ | **Nothing is playing right now...**");
+      if (!interaction.data.options && !player) return client.sendTime(interaction, "❌ | **Nada está tocando agora...**");
 
       SongTitle = interaction.data.options ? interaction.data.options[0].value : player.queue.current.title;
       let lyrics = await lyricsFinder(SongTitle);
