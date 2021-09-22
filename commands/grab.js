@@ -31,10 +31,10 @@ run: async (client, message, args, { GuildDB }) => {
   .setColor("RANDOM")
   .setTitle(`**${player.queue.current.title}**`)
   .addField(`⌛ Duração: `, `\`${prettyMilliseconds(player.queue.current.duration, {colonNotation: true})}\``, true)
-  .addField(`🎵 Author: `, `\`${player.queue.current.author}\``, true)
-  .addField(`▶ Play it:`, `\`${GuildDB ? GuildDB.prefix : client.botconfig.DefaultPrefix
+  .addField(`🎵 Autor: `, `\`${player.queue.current.author}\``, true)
+  .addField(`▶ Tocando:`, `\`${GuildDB ? GuildDB.prefix : client.botconfig.DefaultPrefix
   }play ${player.queue.current.uri}\``)
-  .addField(`🔎 Saved in:`, `<#${message.channel.id}>`)
+  .addField(`🔎 Salvo em:`, `<#${message.channel.id}>`)
   .setFooter(`Requested by: ${player.queue.current.requester.tag}`, player.queue.current.requester.displayAvatarURL({
     dynamic: true
   }))
