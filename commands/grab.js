@@ -30,7 +30,7 @@ run: async (client, message, args, { GuildDB }) => {
   .setURL(player.queue.current.uri)
   .setColor("RANDOM")
   .setTitle(`**${player.queue.current.title}**`)
-  .addField(`⌛ Duration: `, `\`${prettyMilliseconds(player.queue.current.duration, {colonNotation: true})}\``, true)
+  .addField(`⌛ Duração: `, `\`${prettyMilliseconds(player.queue.current.duration, {colonNotation: true})}\``, true)
   .addField(`🎵 Author: `, `\`${player.queue.current.author}\``, true)
   .addField(`▶ Play it:`, `\`${GuildDB ? GuildDB.prefix : client.botconfig.DefaultPrefix
   }play ${player.queue.current.uri}\``)
