@@ -2,11 +2,11 @@ const { MessageEmbed, MessageReaction } = require("discord.js");
 
 module.exports = {
   name: "config",
-  description: "Edit the bot settings",
+  description: "Edite as configurações do bot",
   usage: "",
   permissions: {
-    channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
-    member: ["ADMINISTRATOR"],
+    channel: ["Ver Canal", "Enviar Mensagem", "Embed Links"],
+    member: ["Administrador"],
   },
   aliases: ["conf"],
   /**
@@ -40,7 +40,7 @@ What would you like to edit?
     ).catch(() => {
       ConfigMessage.reactions.removeAll();
       client.sendTime(
-        message.channel, "❌ | **You took too long to respond. If you want to edit the settings, run the command again!**"
+        message.channel, "❌ | **Você demorou muito para responder. Se você quiser editar as configurações, execute o comando novamente!**"
       );
       ConfigMessage.delete(Config);
     });
@@ -55,13 +55,13 @@ What would you like to edit?
     let em = emoji;
     ConfigMessage.reactions.removeAll();
     if (em._emoji.name === "1️⃣") {
-      await client.sendTime(message.channel, "What do you want to change the prefix to?");
+      await client.sendTime(message.channel, "Para que você deseja alterar o prefixo?");
       let prefix = await message.channel.awaitMessages(
         (msg) => msg.author.id === message.author.id,
         { max: 1, time: 30000, errors: ["time"] }
       );
       if (!prefix.first())
-        return client.sendTime(message.channel, "You took too long to respond.");
+        return client.sendTime(message.channel, "Você demorou muito para responder.");
       prefix = prefix.first();
       prefix = prefix.content;
 
