@@ -3,10 +3,10 @@ const prettyMilliseconds = require("pretty-ms");
 
 module.exports = {
   name: "nowplaying",
-  description: "See what song is currently playing",
+  description: "Veja qual música está tocando no momento",
   usage: "",
   permissions: {
-    channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
+    channel: ["Ver Canal", "Enviar Mensagem", "Embed Links"],
     member: [],
   },
   aliases: ["np", "nowplaying", "now playing"],
@@ -22,7 +22,7 @@ module.exports = {
     if (!player)
       return client.sendTime(
         message.channel,
-        "❌ | **Nothing is playing right now...**"
+        "❌ | **Nada está tocando agora...**"
       );
 
     let song = player.queue.current;
@@ -32,7 +32,7 @@ module.exports = {
       .setDescription(`[${song.title}](${song.uri})`)
       .addField("Requested by", `${song.requester}`, true)
       .addField(
-        "Duration",
+        "Duração",
         `${
           client.ProgressBar(player.position, player.queue.current.duration, 15)
             .Bar
@@ -59,7 +59,7 @@ module.exports = {
       if (!player)
         return client.sendTime(
           interaction,
-          "❌ | **Nothing is playing right now...**"
+          "❌ | **Nada está tocando agora...**"
         );
 
       let song = player.queue.current;
@@ -69,7 +69,7 @@ module.exports = {
         .setDescription(`[${song.title}](${song.uri})`)
         .addField("Requested by", `${song.requester}`, true)
         .addField(
-          "Duration",
+          "Duração",
           `${
             client.ProgressBar(
               player.position,
