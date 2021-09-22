@@ -11,10 +11,10 @@ const levels = {
 module.exports = {
     name: "bassboost",
     description: "Ativa o efeito de reforço de graves",
-    usage: "<none|low|medium|high>",
-    permissões: {
+    usage: "<none|low|medium|high|extreme>",
+    permissions: {
         channel: ["VER CANAL", "ENVIAR MENSAGENS", "EMBED LINKS"],
-        membro: [],
+        member: [],
     },
     aliases: ["bb", "bass"],
     /**
@@ -31,7 +31,7 @@ module.exports = {
         if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Você deve estar em um canal de voz para usar este comando!**");
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Você deve estar no mesmo canal de voz que eu para usar este comando!**");
 
-        if (!args[0]) return client.sendTime(message.channel, "**Forneça um nível de reforço de graves. \nNíveis disponíveis:** `none`, `low`, `medium`, `high`"); //if the user do not provide args [arguments]
+        if (!args[0]) return client.sendTime(message.channel, "**Please provide a bassboost level. \nAvailable Levels:** `none`, `low`, `medium`, `high`, `extreme`"); //if the user do not provide args [arguments]
 
         let level = "none";
         if (args.length && args[0].toLowerCase() in levels) level = args[0].toLowerCase();
@@ -44,7 +44,7 @@ module.exports = {
         options: [
             {
                 name: "level",
-                description: `Forneça um nível de reforço de graves. Níveis Disponíveis: low, medium, high, or none`,
+                description: `Please provide a bassboost level. Available Levels: low, medium, high, extreme or none`,
                 value: "[level]",
                 type: 3,
                 required: true,
@@ -73,7 +73,7 @@ module.exports = {
             if (!player) return client.sendTime(interaction, "❌ | **Nada está tocando agora ...**");
             if (!member.voice.channel) return client.sendTime(interaction, "❌ | **Você deve estar em um canal de voz para usar este comando.**");
             if (guild.me.voice.channel && !guild.me.voice.channel.equals(voiceChannel)) return client.sendTime(interaction, ":x: | **Você deve estar no mesmo canal de voz que eu para usar este comando!**");
-            if (!args) return client.sendTime(interaction, "**Forneça um nível de reforço de graves. \nNíveis Disponíveis:** `none`, `low`, `medium`, `high`"); //if the user do not provide args [arguments]
+            if (!args) return client.sendTime(interaction, "**Please provide a bassboost level. \nAvailable Levels:** `none`, `low`, `medium`, `high`, `extreme`"); //if the user do not provide args [arguments]
 
             let level = "none";
             if (args.length && args[0].value in levels) level = args[0].value;
