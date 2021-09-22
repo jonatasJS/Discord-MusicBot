@@ -23,7 +23,7 @@ run: async (client, message, args, { GuildDB }) => {
   if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Você deve estar em um canal de voz para tocar algo!**");
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Você deve estar no mesmo canal de voz que eu para usar este comando!**");
    message.author.send(new MessageEmbed()
-   .setAuthor(`Song saved`, client.user.displayAvatarURL({
+   .setAuthor(`Música Salva`, client.user.displayAvatarURL({
     dynamic: true
   }))
   .setThumbnail(`https://img.youtube.com/vi/${player.queue.current.identifier}/mqdefault.jpg`)
