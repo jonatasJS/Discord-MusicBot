@@ -12,7 +12,7 @@ module.exports = {
     name: "bassboost",
     description: "Ativa o efeito de reforço de graves",
     usage: "<none|low|medium|high>",
-    permissions: {
+    permissões: {
         channel: ["VER CANAL", "ENVIAR MENSAGENS", "EMBED LINKS"],
         member: [],
     },
