@@ -31,12 +31,12 @@ module.exports = {
             )
             .setColor("RANDOM")
             .setFooter(
-              `To get info of each command type ${
+              `Para obter informações de cada tipo de comando ${
                 GuildDB ? GuildDB.prefix : client.botconfig.DefaultPrefix
-              }help [Command] | Have a nice day!`
+              }help [Command] | Tenha um ótimo dia!`
             ).setDescription(`${Commands.join("\n")}
   
-  Discord Music Bot Version: v${require("../package.json").version}
+  Ketty Bot: v${require("../package.json").version}
   [✨ Support Server](${
     client.botconfig.SupportServer
   }) | [GitHub](https://github.com/jonatasJS/Discord-MusicBot) | By [jonatasJS](https://github.com/jonatasJS)`);
@@ -114,7 +114,7 @@ SlashCommand: {
             .setFooter(
               `Para obter informações de cada tipo de comando ${
                 GuildDB ? GuildDB.prefix : client.botconfig.DefaultPrefix
-              }help [Command] | Have a nice day!`
+              }help [Command] | Tenha um ótimo dia!`
             ).setDescription(`${Commands.join("\n")}
   
   Ketty Bot Version: v${require("../package.json").version}
