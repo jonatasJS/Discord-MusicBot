@@ -2,10 +2,10 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "disconnect",
-  description: "Stop the music and leave the voice channel",
+  description: "Pare a música e saia do canal de voz",
   usage: "",
   permissions: {
-    channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
+    channel: ["Ver Mensagem", "Enviar Mensagem", "Embed Links"],
     member: [],
   },
   aliases: ["leave", "exit", "quit", "dc", "stop"],
@@ -18,9 +18,9 @@ module.exports = {
    */
   run: async (client, message, args, { GuildDB }) => {
     let player = await client.Manager.get(message.guild.id);
-    if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel use this command**");
-    if (!player) return client.sendTime(message.channel,"❌ | **Nothing is playing right now...**");
-    await client.sendTime(message.channel,":notes: | **Disconnected!**");
+    if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Você deve estar em um canal de voz, use este comando**");
+    if (!player) return client.sendTime(message.channel,"❌ | **Nada está tocando agora ...**");
+    await client.sendTime(message.channel,":notes: | **Desconectado!**");
     await message.react("✅");
     player.destroy();
   },
@@ -40,7 +40,7 @@ module.exports = {
       if (!member.voice.channel)
         return client.sendTime(
           interaction,
-          "❌ | **You must be in a voice channel to use this command.**"
+          "❌ | **Você deve estar em um canal de voz para usar este comando.**"
         );
       if (
         guild.me.voice.channel &&
@@ -48,19 +48,19 @@ module.exports = {
       )
         return client.sendTime(
           interaction,
-          `❌ | **You must be in ${guild.me.voice.channel} to use this command.**`
+          `❌ | **Você deve estar em ${guild.me.voice.channel} para usar este comando.**`
         );
 
       let player = await client.Manager.get(interaction.guild_id);
       if (!player)
         return client.sendTime(
           interaction,
-          "❌ | **Nothing is playing right now...**"
+          "❌ | **Nada está tocando agora ...**"
         );
       player.destroy();
       client.sendTime(
         interaction,
-        ":notes: | **Disconnected!**"
+        ":notes: | **Desconectado!**"
       );
     },
   },
