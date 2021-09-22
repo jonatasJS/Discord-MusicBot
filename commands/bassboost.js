@@ -13,7 +13,7 @@ module.exports = {
     description: "Ativa o efeito de reforço de graves",
     usage: "<none|low|medium|high|extreme>",
     permissions: {
-        channel: ["VER CANAL", "ENVIAR MENSAGENS", "EMBED LINKS"],
+        channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
         member: [],
     },
     aliases: ["bb", "bass"],
