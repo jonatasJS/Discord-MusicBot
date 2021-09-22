@@ -35,7 +35,7 @@ run: async (client, message, args, { GuildDB }) => {
   .addField(`▶ Tocando:`, `\`${GuildDB ? GuildDB.prefix : client.botconfig.DefaultPrefix
   }play ${player.queue.current.uri}\``)
   .addField(`🔎 Salvo em:`, `<#${message.channel.id}>`)
-  .setFooter(`Requested by: ${player.queue.current.requester.tag}`, player.queue.current.requester.displayAvatarURL({
+  .setFooter(`Executado Por: ${player.queue.current.requester.tag}`, player.queue.current.requester.displayAvatarURL({
     dynamic: true
   }))
     ).catch(e=>{
