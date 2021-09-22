@@ -25,10 +25,10 @@ module.exports = {
 
         if (player.queueRepeat) {
           player.setQueueRepeat(false)
-          client.sendTime(message.channel, `:repeat: Queue Loop \`Desabilitado\``);
+          client.sendTime(message.channel, `:repeat: Loop de fila \`Desabilitado\``);
         } else {
           player.setQueueRepeat(true)
-          client.sendTime(message.channel, `:repeat: Queue Loop \`Habilitado\``);
+          client.sendTime(message.channel, `:repeat: Loop de fila \`Habilitado\``);
         }
     },
     SlashCommand: {
@@ -51,10 +51,10 @@ module.exports = {
 
             if(player.queueRepeat){
                   player.setQueueRepeat(false)
-                  client.sendTime(interaction, `:repeat: **Queue Loop** \`Desabilitado\``);
+                  client.sendTime(interaction, `:repeat: **Loop de fila** \`Desabilitado\``);
               }else{
                   player.setQueueRepeat(true)
-                  client.sendTime(interaction, `:repeat: **Queue Loop** \`Habilitado\``);
+                  client.sendTime(interaction, `:repeat: **Loop de fila** \`Habilitado\``);
               }
           console.log(interaction.data)
         }
