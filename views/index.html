@@ -32,9 +32,10 @@
               alt="Ketty Logo"
               width="30"
               height="30"
+              style="border-radius: 50%;"
               class="d-inline-block align-text-top"
             />
-            Discord Music Bot
+            Ketty
           </a>
           <button
             class="navbar-toggler"
@@ -407,8 +408,8 @@
           data.ClientID
         }&permissions=${data.Permissions}&scope=${data.Scopes.join("%20")}&redirect_uri=${data.Website}${data.CallbackURL}&response_type=code`;
         
-        $("#hero").append(`<a href="${url}" class="btn btn-primary" type="button">Invite</a>
-            <a href="/dashboard" class="btn btn-outline-primary" type="button">Dashboard</a>`);
+        $("#hero").append(`<a href="${url}" class="btn btn-primary" type="button">Convidar</a>
+            <a href="/dashboard" class="btn btn-outline-primary" type="button">Painel de controle</a>`);
       });
 
       $.get("/api/commands", (data) => {
