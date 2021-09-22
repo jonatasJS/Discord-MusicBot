@@ -14,7 +14,7 @@ module.exports = {
     usage: "<none|low|medium|high>",
     permissões: {
         channel: ["VER CANAL", "ENVIAR MENSAGENS", "EMBED LINKS"],
-        member: [],
+        membro: [],
     },
     aliases: ["bb", "bass"],
     /**
