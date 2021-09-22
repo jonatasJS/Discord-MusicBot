@@ -25,10 +25,10 @@ module.exports = {
 
         if (player.trackRepeat) {
           player.setTrackRepeat(false)
-          client.sendTime(message.channel, `🔂  \`Disabled\``);
+          client.sendTime(message.channel, `🔂  \`Desabilitado\``);
         } else {
           player.setTrackRepeat(true)
-          client.sendTime(message.channel, `🔂 \`Enabled\``);
+          client.sendTime(message.channel, `🔂 \`Habilitado\``);
         }
     },
     SlashCommand: {
