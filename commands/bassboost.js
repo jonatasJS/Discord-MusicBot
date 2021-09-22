@@ -44,7 +44,7 @@ module.exports = {
         options: [
             {
                 name: "level",
-                description: `Please provide a bassboost level. Available Levels: low, medium, high, or none`,
+                description: `Forneça um nível de reforço de graves. Níveis Disponíveis: low, medium, high, or none`,
                 value: "[level]",
                 type: 3,
                 required: true,
