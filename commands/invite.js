@@ -2,10 +2,10 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "invite",
-  description: "To invite me to your server",
+  description: "Para me convidar para o seu servidor",
   usage: "",
   permissions: {
-    channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
+    channel: ["Ver Canal", "Enviar Mensagem", "Embed Links"],
     member: [],
   },
   aliases: ["inv"],
@@ -19,7 +19,7 @@ module.exports = {
   run: async (client, message, args, { GuildDB }) => {
     let embed = new MessageEmbed()
       .setAuthor(
-        "Invite " + client.user.tag + " to your server!",
+        "Convidar " + client.user.tag + " para o seu servidor!",
         client.user.displayAvatarURL()
       )
       .setColor("BLUE")
@@ -45,7 +45,7 @@ module.exports = {
   run: async (client, interaction, args, { GuildDB }) => {
     let embed = new MessageEmbed()
       .setAuthor(
-        "Invite " + client.user.tag + " to your server!",
+        "Convidar " + client.user.tag + " para o seu servidor!",
         client.user.displayAvatarURL()
       )
       .setColor("BLUE")
