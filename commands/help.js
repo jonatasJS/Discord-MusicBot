@@ -2,10 +2,10 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "help",
-  description: "Information about the bot",
+  description: "Informações sobre o bot",
   usage: "[command]",
   permissions: {
-    channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
+    channel: ["Ver Canal", "Enviar Mensagem", "Embed Links"],
     member: [],
   },
   aliases: ["command", "commands", "cmd"],
@@ -83,7 +83,7 @@ SlashCommand: {
     options: [
       {
         name: "command",
-        description: "Get information on a specific command",
+        description: "Obtenha informações sobre um comando específico",
         value: "command",
         type: 3,
         required: false
@@ -112,12 +112,12 @@ SlashCommand: {
             )
             .setColor("RANDOM")
             .setFooter(
-              `To get info of each command type ${
+              `Para obter informações de cada tipo de comando ${
                 GuildDB ? GuildDB.prefix : client.botconfig.DefaultPrefix
               }help [Command] | Have a nice day!`
             ).setDescription(`${Commands.join("\n")}
   
-  Discord Music Bot Version: v${require("../package.json").version}
+  Ketty Bot Version: v${require("../package.json").version}
   [✨ Support Server](${
     client.botconfig.SupportServer
   }) | [GitHub](https://github.com/jonatasJS/Discord-MusicBot) | By [jonatasJS](https://github.com/jonatasJS)`);
