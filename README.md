@@ -39,4 +39,12 @@ If you have major coding issues with this bot, please join and ask for help.
 [![Run on Repl.it](https://repl.it/badge/github/jonatasJS/Discord-MusicBot)](https://repl.it/github/jonatasJS/Discord-MusicBot)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jonatasJS/Discord-MusicBot)
 
+## ✨ Contributors
+
+Contributions are always welcomed :D Make sure to follow [Contributing.md](/CONTRIBUTING.md)
+
+<a href="https://github.com/SudhanPlayz/Discord-MusicBot/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=SudhanPlayz/Discord-MusicBot" />
+</a>
+
 Made with :heart: and JavaScript!
