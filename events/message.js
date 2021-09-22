@@ -55,7 +55,7 @@ module.exports = async (client, message) => {
         GuildDB.DJ &&
         !message.channel
           .permissionsFor(message.member)
-          .has(["ADMINISTRATOR"]) &&
+          .has(["ADMINISTRADOR"]) &&
         !message.member.roles.cache.has(GuildDB.DJ))
     )
       return client.sendError(
