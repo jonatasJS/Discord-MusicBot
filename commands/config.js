@@ -23,7 +23,7 @@ module.exports = {
       .addField("Prefix", GuildDB.prefix, true)
       .addField("DJ Role", GuildDB.DJ ? `<@&${GuildDB.DJ}>` : "Not Set", true)
       .setDescription(`
-What would you like to edit?
+O que você gostaria de editar?
 
 :one: - Server Prefix
 :two: - DJ Role
