@@ -4,9 +4,9 @@ module.exports = {
   name: "clear",
   description: "Limpa a fila do servidor",
   usage: "",
-  permissões: {
+  permission: {
     channel: ["Ver Mensagem", "Enviar Mensagem", "Embed Links"],
-    membro: [],
+    member: [],
   },
   aliases: ["cl", "cls"],
   /**
