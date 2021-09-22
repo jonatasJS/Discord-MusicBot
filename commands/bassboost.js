@@ -31,7 +31,7 @@ module.exports = {
         if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Você deve estar em um canal de voz para usar este comando!**");
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Você deve estar no mesmo canal de voz que eu para usar este comando!**");
 
-        if (!args[0]) return client.sendTime(message.channel, "**Please provide a bassboost level. \nAvailable Levels:** `none`, `low`, `medium`, `high`"); //if the user do not provide args [arguments]
+        if (!args[0]) return client.sendTime(message.channel, "**Forneça um nível de reforço de graves. \nNíveis disponíveis:** `none`, `low`, `medium`, `high`"); //if the user do not provide args [arguments]
 
         let level = "none";
         if (args.length && args[0].toLowerCase() in levels) level = args[0].toLowerCase();
