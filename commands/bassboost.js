@@ -73,7 +73,7 @@ module.exports = {
             if (!player) return client.sendTime(interaction, "❌ | **Nada está tocando agora ...**");
             if (!member.voice.channel) return client.sendTime(interaction, "❌ | **Você deve estar em um canal de voz para usar este comando.**");
             if (guild.me.voice.channel && !guild.me.voice.channel.equals(voiceChannel)) return client.sendTime(interaction, ":x: | **Você deve estar no mesmo canal de voz que eu para usar este comando!**");
-            if (!args) return client.sendTime(interaction, "**Please provide a bassboost level. \nAvailable Levels:** `none`, `low`, `medium`, `high`"); //if the user do not provide args [arguments]
+            if (!args) return client.sendTime(interaction, "**Forneça um nível de reforço de graves. \nNíveis Disponíveis:** `none`, `low`, `medium`, `high`"); //if the user do not provide args [arguments]
 
             let level = "none";
             if (args.length && args[0].value in levels) level = args[0].value;
