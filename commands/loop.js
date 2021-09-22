@@ -50,10 +50,10 @@ module.exports = {
 
             if(player.trackRepeat){
                   player.setTrackRepeat(false)
-                  client.sendTime(interaction, `🔂 \`Disabled\``);
+                  client.sendTime(interaction, `🔂 \`Habilitado\``);
               }else{
                   player.setTrackRepeat(true)
-                  client.sendTime(interaction, `🔂 \`Enabled\``);
+                  client.sendTime(interaction, `🔂 \`Desabilitado\``);
               }
           console.log(interaction.data)
         }
