@@ -71,22 +71,22 @@ What would you like to edit?
       });
 
       client.sendTime(
-        message.channel, `Successfully saved guild prefix as \`${prefix}\``
+        message.channel, `Prefixo de guilda salvo com sucesso como \`${prefix}\``
       );
     } else {
       await client.sendTime(
-        message.channel, "Please mention the role you want `DJ's` to have."
+        message.channel, "Por favor, mencione o cargo que você deseja que os `DJs` tenham."
       );
       let role = await message.channel.awaitMessages(
         (msg) => msg.author.id === message.author.id,
         { max: 1, time: 30000, errors: ["time"] }
       );
       if (!role.first())
-        return client.sendTime(message.channel, "You took too long to respond.");
+        return client.sendTime(message.channel, "Você demorou muito para responder.");
       role = role.first();
       if (!role.mentions.roles.first())
         return client.sendTime(
-          message.channel, "Please mention the role that you want for DJ's only."
+          message.channel, "Mencione a função que deseja apenas para DJs."
         );
       role = role.mentions.roles.first();
 
@@ -96,7 +96,7 @@ What would you like to edit?
       });
 
       client.sendTime(
-        message.channel, "Successfully saved DJ role as <@&" + role.id + ">"
+        message.channel, "Função de DJ salva com sucesso como <@&" + role.id + ">"
       );
     }
   },
@@ -105,13 +105,13 @@ What would you like to edit?
     options: [
       {
         name: "prefix",
-        description: "Check the bot's prefix",
+        description: "Verifique o prefixo do bot",
         type: 1,
         required: false,
         options: [
           {
             name: "symbol",
-            description: "Set the bot's prefix",
+            description: "Defina o prefixo do bot",
             type: 3,
             required: false,
           },
@@ -119,13 +119,13 @@ What would you like to edit?
       },
       {
         name: "dj",
-        description: "Check the DJ role",
+        description: "Verifique a função de DJ",
         type: 1,
         required: false,
         options: [
           {
             name: "role",
-            description: "Set the DJ role",
+            description: "Defina a função de DJ",
             type: 8,
             required: false,
           },
@@ -155,10 +155,10 @@ What would you like to edit?
             prefix: prefix,
             DJ: GuildDB.DJ,
           });
-          client.sendTime(interaction, `The prefix has now been set to \`${prefix}\``);
+          client.sendTime(interaction, `O prefixo agora foi definido para \`${prefix}\``);
         } else {
           //has not prefix
-          client.sendTime(interaction, `The prefix of this server is \`${GuildDB.prefix}\``);
+          client.sendTime(interaction, `O prefixo deste servidor é \`${GuildDB.prefix}\``);
         }
       } else if (config === "djrole") {
         //DJ role
@@ -174,14 +174,14 @@ What would you like to edit?
             DJ: role.id,
           });
           client.sendTime(
-            interaction, `Successfully changed the DJ role of this server to ${role.name}`
+            interaction, `Alterou com sucesso a função de DJ deste servidor para ${role.name}`
           );
         } else {
           /**
            * @type {require("discord.js").Role}
            */
           let role = interaction.guild.roles.cache.get(GuildDB.DJ);
-          client.sendTime(interaction, `The DJ role of this server is ${role.name}`);
+          client.sendTime(interaction, `A função de DJ deste servidor é ${role.name}`);
         }
       }
     },
