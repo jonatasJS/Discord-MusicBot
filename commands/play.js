@@ -5,7 +5,7 @@ const prettyMilliseconds = require("pretty-ms");
 module.exports = {
     name: "play",
     description: "Toque suas músicas favoritas",
-    usage: "[song]",
+    use: "[song]",
     permissions: {
         channel: ["Ver Mensagem", "Enviar Mensagem", "Embed Links"],
         member: [],
@@ -22,7 +22,7 @@ module.exports = {
         if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Você deve estar em um canal de voz para tocar algo!**");
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Você deve estar no mesmo canal de voz que eu para usar este comando!**");
         let SearchString = args.join(" ");
-        if (!SearchString) return client.sendTime(message.channel, `**Usage - **\`${GuildDB.prefix}play [song]\``);
+        if (!SearchString) return client.sendTime(message.channel, `**Use - **\`${GuildDB.prefix}play [song]\``);
         let CheckNode = client.Manager.nodes.get(client.botconfig.Lavalink.id);
         let Searching = await message.channel.send(":mag_right: Pesquisando...");
         if (!CheckNode || !CheckNode.connected) {
