@@ -4,10 +4,10 @@ const prettyMilliseconds = require("pretty-ms");
 
 module.exports = {
   name: "queue",
-  description: "Shows all currently enqueued songs",
+  description: "Mostra todas as músicas atualmente enfileiradas",
   usage: "",
   permissions: {
-    channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
+    channel: ["Ver Canal", "Enviar Mensagem", "Embed Links"],
     member: [],
   },
   aliases: ["q"],
@@ -23,19 +23,19 @@ module.exports = {
     if (!player)
       return client.sendTime(
         message.channel,
-        "❌ | **Nothing is playing right now...**"
+        "❌ | **Não está tocando nada agora...**"
       );
 
     if (!player.queue || !player.queue.length || player.queue === 0) {
       let QueueEmbed = new MessageEmbed()
-        .setAuthor("Currently playing", client.botconfig.IconURL)
+        .setAuthor("Tocando neste momento", client.botconfig.IconURL)
         .setColor("RANDOM")
         .setDescription(
           `[${player.queue.current.title}](${player.queue.current.uri})`
         )
-        .addField("Requested by", `${player.queue.current.requester}`, true)
+        .addField("Executado por", `${player.queue.current.requester}`, true)
         .addField(
-          "Duration",
+          "Duração",
           `${
             client.ProgressBar(
               player.position,
@@ -67,26 +67,26 @@ module.exports = {
             {
               colonNotation: true,
             }
-          )}\` **|** Requested by: ${t.requester}\n`
+          )}\` **|** Executado por: ${t.requester}\n`
       ).join("\n");
 
       let Embed = new MessageEmbed()
-        .setAuthor("Queue", client.botconfig.IconURL)
+        .setAuthor("Fila", client.botconfig.IconURL)
         .setColor("RANDOM")
         .setDescription(
           `**Currently Playing:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
         )
-        .addField("Total songs: \n", `\`${player.queue.totalSize - 1}\``, true)
+        .addField("Total de sons: \n", `\`${player.queue.totalSize - 1}\``, true)
         .addField(
-          "Total length: \n",
+          "Comprimento total: \n",
           `\`${prettyMilliseconds(player.queue.duration, {
             colonNotation: true,
           })}\``,
           true
         )
-        .addField("Requested by:", `${player.queue.current.requester}`, true)
+        .addField("Executado por:", `${player.queue.current.requester}`, true)
         .addField(
-          "Current song duration:",
+          "Duração da música atual:",
           `${
             client.ProgressBar(
               player.position,
@@ -130,18 +130,18 @@ module.exports = {
     run: async (client, interaction, args, { GuildDB }) => {
       let player = await client.Manager.get(interaction.guild_id);
       if (!player)
-        return client.sendTime(interaction, "❌ | **Nothing is playing right now...**");
+        return client.sendTime(interaction, "❌ | **Não está tocando nada agora...**");
 
       if (!player.queue || !player.queue.length || player.queue === 0) {
         let QueueEmbed = new MessageEmbed()
-          .setAuthor("Currently playing", client.botconfig.IconURL)
+          .setAuthor("Tocando neste momento", client.botconfig.IconURL)
           .setColor("RANDOM")
           .setDescription(
             `[${player.queue.current.title}](${player.queue.current.uri})`
           )
-          .addField("Requested by", `${player.queue.current.requester}`, true)
+          .addField("Executado por", `${player.queue.current.requester}`, true)
           .addField(
-            "Duration",
+            "Duração ",
             `${
               client.ProgressBar(
                 player.position,
@@ -176,26 +176,26 @@ module.exports = {
         ).join("\n");
 
         let Embed = new MessageEmbed()
-          .setAuthor("Queue", client.botconfig.IconURL)
+          .setAuthor("Fila", client.botconfig.IconURL)
           .setColor("RANDOM")
           .setDescription(
             `**Currently Playing:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
           )
           .addField(
-            "Total songs: \n",
+            "Total de sons: \n",
             `\`${player.queue.totalSize - 1}\``,
             true
           )
           .addField(
-            "Total length: \n",
+            "Comprimento total: \n",
             `\`${prettyMilliseconds(player.queue.duration, {
               colonNotation: true,
             })}\``,
             true
           )
-          .addField("Requested by:", `${player.queue.current.requester}`, true)
+          .addField("Executado por:", `${player.queue.current.requester}`, true)
           .addField(
-            "Current song duration:",
+            "Duração da música atual:",
             `${
               client.ProgressBar(
                 player.position,
