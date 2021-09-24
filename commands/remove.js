@@ -28,7 +28,7 @@ const { TrackUtils } = require("erela.js");
     if (!player.queue || !player.queue.length || player.queue.length === 0)
       return message.channel.send("Não há nada na fila para remover");
     let rm = new MessageEmbed()
-      .setDescription(`✅ **|** Faixa removida **\`${Number(args[0])}\`** da fila!`)
+      .setDescription(`✅ **|** Removed track **\`${Number(args[0])}\`** from the queue`)
       .setColor("GREEN")
       if (isNaN(args[0]))rm.setDescription(`**Usage - **${client.botconfig.prefix}\`remove [track]\``);
       if (args[0] > player.queue.length)
