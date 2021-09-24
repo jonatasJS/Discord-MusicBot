@@ -3,10 +3,10 @@ const { TrackUtils } = require("erela.js");
 
   module.exports = {
     name: "remove",
-    description: `Remover uma música da fila`,
+    description: `Remover uma música da Lista`,
     usage: "[number]",
     permissions: {
-      channel: ["Ver Canal", "Enviar Mensagem", "Embed Links"],
+      channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
       member: [],
     },
     aliases: ["rm"],
@@ -69,9 +69,9 @@ const { TrackUtils } = require("erela.js");
       let rm = new MessageEmbed()
         .setDescription(`✅ | **Faixa removida** \`${Number(args[0])}\` da fila!`)
         .setColor("GREEN")
-      if (isNaN(args[0])) rm.setDescription(`**Usage:** \`${GuildDB.prefix}remove [track]\``);
+      if (isNaN(args[0])) rm.setDescription(`**Use:** \`${GuildDB.prefix}remove [track]\``);
       if (args[0] > player.queue.length)
-        rm.setDescription(`A fila tem apenas ${player.queue.length} canções!`);
+        rm.setDescription(`A fila tem apenas ${player.queue.length} sons!`);
       await interaction.send(rm);
       player.queue.remove(Number(args[0]) - 1);
     },
