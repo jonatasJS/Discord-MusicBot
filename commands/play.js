@@ -7,7 +7,7 @@ module.exports = {
     description: "Toque suas músicas favoritas",
     use: "[song]",
     permissions: {
-        channel: ["Ver Mensagem", "Enviar Mensagem", "Embed Links"],
+        channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
         member: [],
     },
     aliases: ["p"],
@@ -39,7 +39,7 @@ module.exports = {
 
         if (!player) return client.sendTime(message.channel, "❌ | **Nada está tocando agora...**");
 
-        if (player.state != "CONECTADO") await player.connect();
+        if (player.state != "CONNECTED") await player.connect();
 
         try {
             if (SearchString.match(client.Lavasfy.spotifyPattern)) {
@@ -47,7 +47,7 @@ module.exports = {
                 let node = client.Lavasfy.nodes.get(client.botconfig.Lavalink.id);
                 let Searched = await node.load(SearchString);
 
-                if (Searched.loadType === "PLAYLIST CARREGADA") {
+                if (Searched.loadType === "PLAYLIST_LOADED") {
                     let songs = [];
                     for (let i = 0; i < Searched.tracks.length; i++) songs.push(TrackUtils.build(Searched.tracks[i], message.author));
                     player.queue.add(songs);
@@ -72,8 +72,8 @@ module.exports = {
                 let Searched = await player.search(SearchString, message.author);
                 if (!player) return client.sendTime(message.channel, "❌ | **Nada está tocando agora...**");
 
-                if (Searched.loadType === "SEM COMBINAÇÕES") return client.sendTime(message.channel, "**Nenhuma correspondência encontrada para - **" + SearchString);
-                else if (Searched.loadType == "PLAYLIST CARREGADA") {
+                if (Searched.loadType === "NO_MATCHES") return client.sendTime(message.channel, "**Nenhuma correspondência encontrada para - **" + SearchString);
+                else if (Searched.loadType == "PLAYLIST_LOADED") {
                     player.queue.add(Searched.tracks);
                     if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
                     SongAddedEmbed.setAuthor(`Playlist added to queue`, client.botconfig.IconURL);
@@ -136,7 +136,7 @@ module.exports = {
                 textChannel: interaction.channel_id,
                 selfDeafen: false,
             });
-            if (player.state != "CONECTADO") await player.connect();
+            if (player.state != "CONNECTED") await player.connect();
             let search = interaction.data.options[0].value;
             let res;
 
@@ -146,14 +146,14 @@ module.exports = {
                 let Searched = await node.load(search);
 
                 switch (Searched.loadType) {
-                    case "ERRO DE CARREGAMENTO":
+                    case "LOAD_FAILED":
                         if (!player.queue.current) player.destroy();
                         return client.sendError(interaction, `❌ | **There was an error while searching**`);
 
-                    case "SEM COMBINAÇÕES":
+                    case "NO_MATCHES":
                         if (!player.queue.current) player.destroy();
                         return client.sendTime(interaction, "❌ | **Nenhum resultado foi encontrado.**");
-                    case "Trilha carregada":
+                    case "TRACK_LOADED":
                         player.queue.add(TrackUtils.build(Searched.tracks[0], member.user));
                         if (!player.playing && !player.paused && !player.queue.length) player.play();
                         let SongAddedEmbed = new MessageEmbed();
@@ -164,7 +164,7 @@ module.exports = {
                             if (player.queue.totalSize > 1) SongAddedEmbed.addField("Posição na fila", `${player.queue.size - 0}`, true);
                             return interaction.send(SongAddedEmbed);
 
-                    case "RESULTADO DA PESQUISA":
+                    case "SEARCH_RESULT":
                         player.queue.add(TrackUtils.build(Searched.tracks[0], member.user));
                         if (!player.playing && !player.paused && !player.queue.length) player.play();
                         let SongAdded = new MessageEmbed();
@@ -176,7 +176,7 @@ module.exports = {
                             return interaction.send(SongAdded);
 
 
-                    case "Playlist carregada":
+                    case "PLAYLIST_LOADED":
                         let songs = [];
                         for (let i = 0; i < Searched.tracks.length; i++) songs.push(TrackUtils.build(Searched.tracks[i], member.user));
                         player.queue.add(songs);
@@ -190,7 +190,7 @@ module.exports = {
             } else {
                 try {
                     res = await player.search(search, member.user);
-                    if (res.loadType === "ERRO DE CARREGAMENTO") {
+                    if (res.loadType === "LOAD_FAILED") {
                         if (!player.queue.current) player.destroy();
                         return client.sendError(interaction, `:x: | **There was an error while searching**`);
                     }
@@ -198,10 +198,10 @@ module.exports = {
                     return client.sendError(interaction, `There was an error while searching: ${err.message}`);
                 }
                 switch (res.loadType) {
-                    case "SEM COMBINAÇÕES":
+                    case "NO_MATCHES":
                         if (!player.queue.current) player.destroy();
                         return client.sendTime(interaction, "❌ | **Nenhum resultado foi encontrado.**");
-                    case "Trilha carregada":
+                    case "TRACK_LOADED":
                         player.queue.add(res.tracks[0]);
                         if (!player.playing && !player.paused && !player.queue.length) player.play();
                         let SongAddedEmbed = new MessageEmbed();
@@ -214,7 +214,7 @@ module.exports = {
                             if (player.queue.totalSize > 1) SongAddedEmbed.addField("Posição na fila", `${player.queue.size - 0}`, true);
                             return interaction.send(SongAddedEmbed);
                             
-                    case "Playlist carregada":
+                    case "PLAYLIST_LOADED":
                         player.queue.add(res.tracks);
                         await player.play();
                         let SongAdded = new MessageEmbed();
@@ -224,7 +224,7 @@ module.exports = {
                         SongAdded.addField("Enfileirado", `\`${res.tracks.length}\` songs`, false);
                         SongAdded.addField("Duração da lista de reprodução", `\`${prettyMilliseconds(res.playlist.duration, { colonNotation: true })}\``, false);
                         return interaction.send(SongAdded);
-                    case "RESULTADO DA PESQUISA":
+                    case "SEARCH_RESULT":
                         const track = res.tracks[0];
                         player.queue.add(track);
                     
