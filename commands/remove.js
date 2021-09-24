@@ -28,7 +28,7 @@ const { TrackUtils } = require("erela.js");
     if (!player.queue || !player.queue.length || player.queue.length === 0)
       return message.channel.send("❌ | Não há nada na fila para remover");
     let rm = new MessageEmbed()
-      .setDescription(`✅ **|** Removed track **\`${Number(args[0])}\`** from the queue`)
+      .setDescription(`✅ **|** Faixa removida **\`${Number(args[0])}\`** da fila`)
       .setColor("GREEN")
       if (isNaN(args[0]))rm.setDescription(`**Usage - **${client.botconfig.prefix}\`remove [track]\``);
       if (args[0] > player.queue.length)
@@ -66,11 +66,11 @@ const { TrackUtils } = require("erela.js");
       if (!player.queue || !player.queue.length || player.queue.length === 0)
       return client.sendTime("❌ | **Não está tocando nada agora...**");
       let rm = new MessageEmbed()
-        .setDescription(`✅ | **Removed track** \`${Number(args[0])}\` from the queue!`)
+        .setDescription(`✅ | **Faixa removida** \`${Number(args[0])}\` da fila!`)
         .setColor("GREEN")
       if (isNaN(args[0])) rm.setDescription(`**Usage:** \`${GuildDB.prefix}remove [track]\``);
       if (args[0] > player.queue.length)
-        rm.setDescription(`The queue has only ${player.queue.length} songs!`);
+        rm.setDescription(`A fila tem apenas ${player.queue.length} canções!`);
       await interaction.send(rm);
       player.queue.remove(Number(args[0]) - 1);
     },
