@@ -26,7 +26,7 @@ const { TrackUtils } = require("erela.js");
     if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Você deve estar no mesmo canal de voz que eu para usar este comando!**");
         
     if (!player.queue || !player.queue.length || player.queue.length === 0)
-      return message.channel.send("Não há nada na fila para remover");
+      return message.channel.send("❌ | Não há nada na fila para remover");
     let rm = new MessageEmbed()
       .setDescription(`✅ **|** Removed track **\`${Number(args[0])}\`** from the queue`)
       .setColor("GREEN")
