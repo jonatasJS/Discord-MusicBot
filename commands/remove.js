@@ -20,6 +20,7 @@ const { TrackUtils } = require("erela.js");
    */
   run: async (client, message, args, { GuildDB }) => {
     let player = await client.Manager.players.get(message.guild.id);
+    if(!player.queue) return;
     const song = player.queue.slice(args[0] - 1, 1); 
     if (!player) return client.sendTime(message.channel, "❌ | **Não está tocando nada agora...**");
     if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Você deve estar em um canal de voz para usar este comando!**");
