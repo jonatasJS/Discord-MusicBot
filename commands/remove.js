@@ -32,7 +32,7 @@ const { TrackUtils } = require("erela.js");
       .setColor("GREEN")
       if (isNaN(args[0]))rm.setDescription(`**Usage - **${client.botconfig.prefix}\`remove [track]\``);
       if (args[0] > player.queue.length)
-      rm.setDescription(`A fila tem apenas ${player.queue.length} canções!`);
+      rm.setDescription(`A fila tem apenas ${player.queue.length} sons!`);
     await message.channel.send(rm);
     player.queue.remove(Number(args[0]) - 1);
   },
