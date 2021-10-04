@@ -48,7 +48,7 @@ module.exports = {
                 value: `┕\`${(process.usagePercent((err, percent, seconds) => {
 			if(err) return "Undefined!";
 			return percent;
-		}))}\``;,
+		}))}\``,
                 inline: true
             })
 
