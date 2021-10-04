@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 require("moment-duration-format");
 const cpuStat = require("cpu-stat");
 const moment = require("moment");
+let test = false;
 
 module.exports = {
     name: "stats",
@@ -49,6 +50,7 @@ module.exports = {
 			if(await err) return console.log("Undefined!");
 			console.log(process.env);
 			console.log(await percent);
+			test=!test;
 			return await percent;
 		}))}\``,
                 inline: true
@@ -81,8 +83,16 @@ module.exports = {
                 value: `┕\`${process.version}\``,
                 inline: true
             })
-
-        return message.channel.send(embed);
+	
+	if(test) {
+	  test=!test;
+          return message.channel.send(embed);
+	} else {
+		if(test) {
+		  test=!test;
+		  return message.channel.send(embed);
+		}
+	}
     })
 },
 SlashCommand: {
