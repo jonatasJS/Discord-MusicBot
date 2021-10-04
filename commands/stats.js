@@ -45,10 +45,10 @@ module.exports = {
                 inline: true
             },{
                 name: ':desktop: CPU Usage',
-                value: `┕\`${(process.usagePercent((err, percent, seconds) => {
-                    if(err) return "Undefined!";
-                    return percent;
-                })\``,
+                value: const teste = `┕\`${(process.usagePercent((err, percent, seconds) => {
+													if(err) return "Undefined!";
+                          return percent;
+                       }))}\``;,
                 inline: true
             })
 
