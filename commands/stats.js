@@ -2,15 +2,15 @@ const { MessageEmbed } = require("discord.js");
 require("moment-duration-format");
 const cpuStat = require("cpu-stat");
 const moment = require("moment");
-let cpuStats = false;
+let cpuStats = "Undefined!";
 
-setInterval(() => {
-	cpuStat.usagePercent(async (err, percent, seconds) => {
+setInterval(async () => {
+	await cpuStat.usagePercent(async (err, percent, seconds) => {
 		if(await err) return console.log("Undefined!");
 		console.log(await percent);
 		
-		return cpuStats await percent;
-	})
+		return cpuStats = await percent;
+	});
 }, 1000);
 
 module.exports = {
