@@ -55,7 +55,7 @@ module.exports = {
                 inline: true
             },{
                 name: ':desktop: CPU Usage',
-                value: `┕\`${cpuStats}\``,
+                value: `┕\`${cpuStats.toFixed(2)}%\``,
                 inline: true
             })
 
