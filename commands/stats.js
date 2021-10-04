@@ -2,7 +2,16 @@ const { MessageEmbed } = require("discord.js");
 require("moment-duration-format");
 const cpuStat = require("cpu-stat");
 const moment = require("moment");
-let test = false;
+let cpuStats = false;
+
+setInterval(() => {
+	cpuStat.usagePercent(async (err, percent, seconds) => {
+		if(await err) return console.log("Undefined!");
+		console.log(await percent);
+		
+		return cpuStats await percent;
+	})
+}, 1000);
 
 module.exports = {
     name: "stats",
@@ -46,13 +55,7 @@ module.exports = {
                 inline: true
             },{
                 name: ':desktop: CPU Usage',
-                value: `┕\`${(cpuStat.usagePercent(async (err, percent, seconds) => {
-			if(await err) return console.log("Undefined!");
-			console.log(process.env);
-			console.log(await percent);
-			test=!test;
-			return await percent;
-		}))}\``,
+                value: `┕\`${cpuStats}\``,
                 inline: true
             })
 
