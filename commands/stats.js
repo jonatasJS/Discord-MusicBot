@@ -43,6 +43,13 @@ module.exports = {
                 name: ':file_cabinet: Memory',
                 value: `┕\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb\``,
                 inline: true
+            },{
+                name: ':desktop: CPU Usage',
+                value: `┕\`${(process.usagePercent((err, percent, seconds) => {
+                    if(err) return "Undefined!";
+                    return percent;
+                })\``,
+                inline: true
             })
 
             embed.addFields({
