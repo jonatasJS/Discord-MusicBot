@@ -41,11 +41,11 @@ module.exports = {
                 inline: true
             },{
                 name: ':file_cabinet: Memory',
-                value: `┕\`${(cpuStat.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb\``,
+                value: `┕\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb\``,
                 inline: true
             },{
                 name: ':desktop: CPU Usage',
-                value: `┕\`${(process.usagePercent((err, percent, seconds) => {
+                value: `┕\`${(cpuStat.usagePercent((err, percent, seconds) => {
 			if(err) return "Undefined!";
 			return percent;
 		}))}\``,
