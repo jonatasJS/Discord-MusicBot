@@ -45,9 +45,11 @@ module.exports = {
                 inline: true
             },{
                 name: ':desktop: CPU Usage',
-                value: `┕\`${(cpuStat.usagePercent((err, percent, seconds) => {
-			if(err) return "Undefined!";
-			return percent;
+                value: `┕\`${(cpuStat.usagePercent(async (err, percent, seconds) => {
+			if(await err) return console.log("Undefined!");
+			console.log(process.env);
+			console.log(await percent);
+			return await percent;
 		}))}\``,
                 inline: true
             })
