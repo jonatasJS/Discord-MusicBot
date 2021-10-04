@@ -86,16 +86,7 @@ module.exports = {
                 value: `┕\`${process.version}\``,
                 inline: true
             })
-	
-	if(test) {
-	  test=!test;
-          return message.channel.send(embed);
-	} else {
-		if(test) {
-		  test=!test;
-		  return message.channel.send(embed);
-		}
-	}
+							return message.channel.send(embed);
     })
 },
 SlashCommand: {
