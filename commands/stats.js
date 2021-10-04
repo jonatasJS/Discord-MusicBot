@@ -41,7 +41,7 @@ module.exports = {
                 inline: true
             },{
                 name: ':file_cabinet: Memory',
-                value: `┕\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb\``,
+                value: `┕\`${(cpuStat.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb\``,
                 inline: true
             },{
                 name: ':desktop: CPU Usage',
