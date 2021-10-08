@@ -36,6 +36,7 @@ class DiscordMusicBot extends Client {
       //Config for production
       this.botconfig = require("../botconfig");
     }
+    this.log(this.botconfig.DefaultPrefix);
     if (this.botconfig.Token === "")
       return new TypeError(
         "The botconfig.js is not filled out. Please make sure nothing is blank, otherwise the bot will not work properly."
@@ -249,7 +250,7 @@ class DiscordMusicBot extends Client {
   build() {
     this.login(this.botconfig.Token);
     if(this.botconfig.ExpressServer){
-      this.http.listen(process.env.PORT || this.botconfig.Port, () => this.log("Web Server has been started"));
+      this.http.listen(process.env.PORT_BOT || this.botconfig.PORT_BOT, () => this.log("Web Server has been started"));
     }
   }
 

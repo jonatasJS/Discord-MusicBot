@@ -1,8 +1,8 @@
 module.exports = {
   Admins: ["563106455025352726"], //Admins of the bot
   ExpressServer: true,//If you wanted to make the website run or not
-  DefaultPrefix: process.env.Prefix || ">", //Default prefix, Server Admins can change the prefix
-  Port: 3000, //Which port website gonna be hosted
+  DefaultPrefix: process.env.Prefix || "dev!", //Default prefix, Server Admins can change the prefix
+  PORT_BOT: 3333, //Which port website gonna be hosted
   SupportServer: "https://discord.gg/D9SkzTZxrM", //Support Server Link
   Token: process.env.Token || "", //Discord Bot Token
   ClientID: process.env.Discord_ClientID || "", //Discord Client ID

@@ -14,7 +14,7 @@ module.exports = async (client) => {
     client.user.setPresence({
         status: "online", // You can show online, idle, and dnd
         activity: {
-            name: name ? "Music (>play)" : "Help (>help)", // The message shown
+            name: name ? `Music (${client.botconfig.DefaultPrefix}play)` : `Help (${client.botconfig.DefaultPrefix}help)`, // The message shown
             type: "STREAMING", // PLAYING, WATCHING, LISTENING, STREAMING,
         }
     });

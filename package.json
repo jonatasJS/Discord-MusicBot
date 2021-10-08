@@ -7,6 +7,7 @@
     "install-node-v14": "wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash && export NVM_DIR=\"$([ -z \"${XDG_CONFIG_HOME-}\" ] && printf %s \"${HOME}/.nvm\" || printf %s \"${XDG_CONFIG_HOME}/nvm\")\" && [ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" && nvm install 14 && nvm use 14",
     "start": "node index",
     "dev": "nodemon index",
+    "dev-next": "next",
     "rm-logs": "rm Logs.log"
   },
   "repository": {
@@ -30,10 +31,12 @@
   },
   "homepage": "https://github.com/jonatasJS/Discord-MusicBot#readme",
   "dependencies": {
+    "child_process": "^1.0.2",
     "colors": "^1.4.0",
     "cpu-stat": "^2.0.1",
     "discord.js": "^12.5.3",
     "discordjs-activity": "1.2.0",
+    "dotenv": "^10.0.0",
     "erela.js": "^2.3.2",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
@@ -44,11 +47,15 @@
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
     "mongoose": "^5.12.3",
+    "next": "^11.1.2",
     "node-fetch": "^2.6.1",
     "passport": "^0.4.1",
     "passport-discord": "^0.1.4",
     "pretty-ms": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "socket.io": "^4.0.1",
+    "styled-components": "^5.3.1",
     "winston": "^3.3.3"
   },
   "devDependencies": {
