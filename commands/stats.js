@@ -2,6 +2,16 @@ const { MessageEmbed } = require("discord.js");
 require("moment-duration-format");
 const cpuStat = require("cpu-stat");
 const moment = require("moment");
+let cpuStats = "Undefined!";
+
+setInterval(async () => {
+	await cpuStat.usagePercent(async (err, percent, seconds) => {
+		if(await err) return console.log("Undefined!");
+		console.log(await percent);
+		
+		return cpuStats = await percent;
+	});
+}, 1000);
 
 module.exports = {
     name: "stats",
@@ -43,6 +53,10 @@ module.exports = {
                 name: ':file_cabinet: Memory',
                 value: `┕\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb\``,
                 inline: true
+            },{
+                name: ':desktop: CPU Usage',
+                value: `┕\`${cpuStats.toFixed(2)}%\``,
+                inline: true
             })
 
             embed.addFields({
@@ -72,8 +86,7 @@ module.exports = {
                 value: `┕\`${process.version}\``,
                 inline: true
             })
-
-        return message.channel.send(embed);
+							return message.channel.send(embed);
     })
 },
 SlashCommand: {
