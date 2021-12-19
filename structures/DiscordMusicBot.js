@@ -250,7 +250,7 @@ class DiscordMusicBot extends Client {
   build() {
     this.login(this.botconfig.Token);
     if(this.botconfig.ExpressServer){
-      this.http.listen(process.env.PORT_BOT || this.botconfig.PORT_BOT, () => this.log("Web Server has been started"));
+      this.http.listen(process.env.PORT || process.env.port || this.botconfig.PORT_BOT, () => this.log("Web Server has been started"));
     }
   }
 
