@@ -1,4 +1,5 @@
 <h1 align="center"><img src="./assets/logo.gif" width="30px"> Discord Music Bot <img src="./assets/logo.gif" width="30px"></h1>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2a5e9006-1edf-426c-8e30-d5bb7c2a797d/deploy-status)](https://app.netlify.com/sites/angry-turing-cd85c2/deploys)
 <p align="center">Thanks for 25k Views with 500 subs!</p>
 
 ## ✨Latest Updates✨
