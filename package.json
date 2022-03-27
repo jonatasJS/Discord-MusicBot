@@ -13,9 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/jonatasJS/Discord-MusicBot.git"
   },
-  "engines": {
-    "node": "16.x"
-  },
   "keywords": [
     "discord",
     "discord-bot",
