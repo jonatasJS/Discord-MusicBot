@@ -71,7 +71,6 @@ module.exports = {
 
       SongTitle = interaction.data.options ? interaction.data.options[0].value : player.queue.current.title;
       let lyrics = await lyricsFinder(SongTitle);
-      console.log(lyrics.length === 0)
       if (lyrics.length === 0)
         return client.sendTime(interaction, `**Nenhuma letra encontrada para-** \`${SongTitle}\``);
       lyrics = lyrics.split("\n"); //spliting into lines

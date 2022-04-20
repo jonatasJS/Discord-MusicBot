@@ -7,7 +7,8 @@ let cpuStats = "Undefined!";
 setInterval(async () => {
 	await cpuStat.usagePercent(async (err, percent, seconds) => {
 		if(await err) return console.log("Undefined!");
-		console.log(await percent);
+        // console.clear();
+		// console.log(await percent);
 		
 		return cpuStats = await percent;
 	});
@@ -18,7 +19,7 @@ module.exports = {
     description: "Get information about the bot",
     usage: "",
     permissions: {
-        channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
+        channel: [ "ADMINISTRADOR", "VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
         member: [],
     },
     aliases: ["about", "ping", "info"],

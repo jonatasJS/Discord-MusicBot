@@ -41,7 +41,6 @@ module.exports = (client, guild) => {
             ", Command: " +
             dataStuff.name
         );
-        console.log(e);
       }
     });
   });
